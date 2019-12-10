@@ -8,11 +8,14 @@ import CreateProfile from '../profile-forms/CreateProfile';
 import EditProfile from '../profile-forms/EditProfile';
 import AddExperience from '../profile-forms/AddExperience';
 import AddEducation from '../profile-forms/AddEducation';
+import Jobs from '../jobs/Jobs';
+import Messages from '../messages/Messages';
 import Profiles from '../profiles/Profiles';
 import Profile from '../profile/Profile';
 import Posts from '../posts/Posts';
 import Post from '../post/Post';
 import PrivateRoute from '../routing/PrivateRoute';
+import NotFound from '../layout/NotFound';
 
 const Routes = () => {
   return (
@@ -22,6 +25,8 @@ const Routes = () => {
         <Route exact path='/register' component={Register} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/profiles' component={Profiles} />
+        <Route exact path='/jobs' component={Jobs} />
+        <Route path='/jobs/search/:description/:location' component={Jobs} />
         <Route exact path='/profile/:id' component={Profile} />
         <PrivateRoute exact path='/dashboard' component={Dashboard} />
         <PrivateRoute exact path='/create-profile' component={CreateProfile} />
@@ -30,6 +35,8 @@ const Routes = () => {
         <PrivateRoute exact path='/add-education' component={AddEducation} />
         <PrivateRoute exact path='/posts' component={Posts} />
         <PrivateRoute exact path='/posts/:id' component={Post} />
+        <PrivateRoute exact path='/messages' component={Messages} />
+        <Route component={NotFound} />
       </Switch>
     </section>
   );

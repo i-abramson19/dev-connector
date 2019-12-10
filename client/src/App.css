@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 /* Global Styles */
 :root {
-  --primary-color: #17a2b8;
-  --dark-color: #343a40;
+  --primary-color:#217497;
+  --dark-color: #101010;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
@@ -14,7 +16,7 @@
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Open Sans', 'Raleway', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
@@ -32,6 +34,10 @@ ul {
 
 img {
   width: 100%;
+}
+
+input:focus, select:focus, textarea:focus, button:focus {
+  outline: none;
 }
 
 /* Utilities */
@@ -129,13 +135,14 @@ img {
 .btn {
   display: inline-block;
   background: var(--light-color);
+  border-radius: 3px;
   color: #333;
-  padding: 0.4rem 1.3rem;
+  padding: 0.6rem 3.5rem;
   font-size: 1rem;
   border: none;
   cursor: pointer;
-  margin-right: 0.5rem;
-  transition: opacity 0.2s ease-in;
+  margin-right: 2rem;
+  transition: opacity 0.3s ease-in;
   outline: none;
 }
 
@@ -235,6 +242,31 @@ img {
 }
 
 /* Forms */
+.searchForm {
+  font-size: 1rem;
+}
+
+.searchForm input {
+  border-radius: 25px;
+  font-size: 1rem;
+  border: 1px solid var(--primary-color);
+}
+
+.searchForm input[type='text'] {
+  width: 32%;
+  padding: 0.75rem 1.5rem;
+  margin-right: 2%;
+}
+
+.searchForm button {
+  font-size: 1rem;
+  border-radius: 25px;
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  width: 32%;
+  padding: 0.45rem;
+}
+
 .form .form-group {
   margin: 1.2rem 0;
 }
@@ -252,7 +284,7 @@ img {
 .form select,
 .form textarea {
   display: block;
-  width: 100%;
+  width: 50%;
   padding: 0.4rem;
   font-size: 1.2rem;
   border: 1px solid #ccc;
@@ -309,7 +341,7 @@ button {
   width: 100%;
   top: 0;
   border-bottom: solid 1px var(--primary-color);
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .navbar ul {
@@ -361,6 +393,7 @@ button {
 }
 
 /* Profile Page */
+
 .profile-grid {
   display: grid;
   grid-template-areas:
@@ -574,4 +607,32 @@ button {
   .post button {
     padding: 0.3rem 0.4rem;
   }
+}
+
+.messages-count {
+  color: var(--light-color);
+  top: -3px;
+  position: relative;
+}
+
+.job {
+  border: 2px solid var(--primary-color);
+}
+
+.job img {
+  height: 40px;
+  width: auto;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+#indeed_at img {
+  border: 0;
+  width: 50px;
+  vertical-align: middle;
 }

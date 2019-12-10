@@ -15,7 +15,7 @@ const ProfileItem = ({ profile: {
             <Link to={`/profile/${_id}`}>
                 <img className="roung-img" src={avatar} alt="" />
             </Link>
-            <div>
+            <div class="col-6">
                 <h2>{name}</h2>
                 <p>{status} {company && <span>at {company}</span>}</p>
                 <p className="my-1">{location && <span>{location}</span>}</p>
@@ -23,13 +23,16 @@ const ProfileItem = ({ profile: {
                     View Profile
                 </Link>
             </div>
-            <ul>
-                {skills.slice(0, 4).map((skill, index) => (
-                    <li key={index} className="text-primary">
-                        <i className="fas fa-check"></i>{' '}{skill}
-                    </li>
-                ))}
-            </ul>
+            <div class="col-6">
+                <h3>Skills</h3>
+                <ul>
+                    {skills.slice(0, 4).map((skill, index) => (
+                        <li key={index} className="text-primary">
+                            <i className="fas fa-check"></i>{' '}{skill}
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
     );
 }

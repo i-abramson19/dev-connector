@@ -14,12 +14,18 @@
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "bluebird": "^3.7.1",
     "config": "^3.1.0",
+    "connect-history-api-fallback": "^1.6.0",
     "express": "^4.17.1",
     "express-validator": "^5.3.1",
     "gravatar": "^1.8.0",
     "jsonwebtoken": "^8.5.1",
+    "material-ui": "^0.20.2",
+    "material-ui-search-bar": "^0.4.2",
     "mongoose": "^5.6.0",
+    "query-string": "^6.9.0",
+    "react-router-redux": "^4.0.8",
     "request": "^2.88.0"
   },
   "devDependencies": {

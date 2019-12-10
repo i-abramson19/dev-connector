@@ -7,16 +7,24 @@ import DashboardActions from './DashboardActions';
 import Experience from './Experience';
 import Education from './Education';
 import { getCurrentProfile, deleteAccount } from '../../actions/profile';
+import { getMessages } from '../../actions/message';
 
 const Dashboard = ({
   getCurrentProfile,
   deleteAccount,
   auth: { user },
+  getMessages,
+  message: { messages },
   profile: { profile, loading }
 }) => {
   useEffect(() => {
     getCurrentProfile();
-  }, [getCurrentProfile]);
+    if (user) {
+      getMessages(user._id)
+    } else {
+      getMessages()
+    };
+  }, [getCurrentProfile, getMessages]);
 
   return loading && profile === null ? (
     <Spinner />
@@ -50,6 +58,8 @@ const Dashboard = ({
 };
 
 Dashboard.propTypes = {
+  getMessages: PropTypes.func.isRequired,
+  message: PropTypes.object.isRequired,
   getCurrentProfile: PropTypes.func.isRequired,
   deleteAccount: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
@@ -58,10 +68,11 @@ Dashboard.propTypes = {
 
 const mapStateToProps = state => ({
   auth: state.auth,
-  profile: state.profile
+  profile: state.profile,
+  message: state.message,
 });
 
 export default connect(
   mapStateToProps,
-  { getCurrentProfile, deleteAccount }
+  { getCurrentProfile, deleteAccount, getMessages }
 )(Dashboard);

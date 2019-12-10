@@ -1,0 +1,1 @@
+document.getElementsByClassName('job').onclick = function() { alert('ok') }

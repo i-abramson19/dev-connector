@@ -86,14 +86,14 @@ const CreateProfile = ({ createProfile, history }) => {
                 <div className="form-group">
                     <input type="text" placeholder="Location" name="location" value={location} onChange={e => onChange(e)} />
                     <small className="form-text"
-                        >City &amp; state suggested (eg. Boston, MA)</small
+                        >City &amp; state suggested (eg. San Francisco, CA)</small
                     >
                 </div>
                 <div className="form-group">
                     <input type="text" placeholder="* Skills" name="skills" value={skills} onChange={e => onChange(e)} />
                     <small className="form-text"
                         >Please use comma separated values (eg.
-                        HTML,CSS,JavaScript,PHP)</small
+                        HTML,CSS,JavaScript,Python)</small
                     >
                 </div>
                 <div className="form-group">
