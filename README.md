@@ -18,7 +18,7 @@ This project was built while taking a [Udemy](https://www.udemy.com/course/mern-
 npm install
 
 # Frontend dependencies
-cd frontend
+cd client
 npm install
 ```
 
